@@ -1,10 +1,13 @@
 ﻿
+using Generic_Libraries;
 using System;
 
 namespace MathGame
 {
     class GameMenuDesign
     {
+
+        static private int chooise = 0;
 
         static private void HeaderSreen()
         {
@@ -24,7 +27,8 @@ namespace MathGame
                                                 
             Console.WriteLine("\n\t\t\t\t\t      -_-_-_-_-_-_-_-_-_-_-_-");
 
-            Console.Write("\n\t\t\t\t\t          Chooise [1:3]: ");
+            chooise = Read_Int_Input.ReadNumberBetweenRange(1, 3, "\n\t\t\t\t\t          Chooise [1:3]: ",
+                "\n\t\t\t\t       Out of range, Enter a vaild number [1:3]: ");
 
         }
 
