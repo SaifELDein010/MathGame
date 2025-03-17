@@ -7,9 +7,14 @@ namespace MathGame
         static void Main()
         {
 
+            while(GameMenuDesign.continueTheGame)
+            {
 
+                GameMenuDesign.MainMenuScreen();
+            
+            }
 
-
+            Console.ReadKey();
             
         }
     }
