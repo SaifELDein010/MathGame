@@ -8,6 +8,7 @@ namespace MathGame
     {
 
         static private int chooise = 0;
+        static public bool continueTheGame = true;
 
         static private void HeaderSreen()
         {
@@ -33,18 +34,55 @@ namespace MathGame
         }
 
 
+        static private void Start()
+        {
+
+            Console.Clear();
+            Console.Write("Come soon, Enter any key to go back...");
+            Console.ReadKey();
+
+        }
+
+        static private void ShowPreviousResultScreen()
+        {
+
+            Console.Clear();
+            Console.Write("Come soon, Enter any key to go back...");
+            Console.ReadKey();
+
+        }
+
+
         static private void PerfromOption()
         {
 
+            switch(chooise)
+            {
 
+                case 1:
+                    Start();
+                    break;
+
+                case 2:
+                    ShowPreviousResultScreen();
+                    break;
+
+                case 3:
+                    continueTheGame = false;
+                break;
+
+            }
 
         }
 
         static public void MainMenuScreen()
         {
 
+            Console.Clear();
+
             HeaderSreen();
             MenuScreen();
+            PerfromOption();
 
         }
 
