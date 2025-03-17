@@ -10,6 +10,7 @@ namespace MathGame
         static private int chooise = 0;
         static public bool continueTheGame = true;
 
+
         static private void HeaderSreen()
         {
 
@@ -52,7 +53,6 @@ namespace MathGame
 
         }
 
-
         static private void PerfromOption()
         {
 
@@ -74,6 +74,7 @@ namespace MathGame
             }
 
         }
+
 
         static public void MainMenuScreen()
         {
