@@ -4,9 +4,19 @@ using Generic_Libraries;
 
 namespace MathGame
 {
-    class LevelOfGame
+
+    class GameOption
     {
 
+        static public int from    = 0;
+        static public int to      = 0;
+        static public char option ='\0';
+
+    }
+
+
+    class LevelOfGame
+    {
 
         static private int chooise = 0;
 
@@ -34,7 +44,39 @@ namespace MathGame
 
         }
 
+        static private void SetRangeOfNumber(int from, int to)
+        {
 
+            GameOption.from = from;
+            GameOption.to = to;
+
+        }
+
+        static private void PerfromOption()
+        {
+
+            switch (chooise)
+            {
+
+                case 1:
+                    SetRangeOfNumber(0, 100);
+                    break;
+
+                case 2:
+                    SetRangeOfNumber(100, 150);
+                    break;
+
+                case 3:
+                    SetRangeOfNumber(150, 200);
+                    break;
+
+                case 4:
+                    SetRangeOfNumber(0, 200);
+                    break;
+
+            }
+
+        }
 
 
         static public void LevelMenuScreen()
@@ -44,6 +86,7 @@ namespace MathGame
 
             HeaderSreen();
             MenuScreen();
+            PerfromOption();
 
         }
 
