@@ -39,6 +39,7 @@ namespace MathGame
         {
 
             Console.Clear();
+            LevelOfGame.LevelMenuScreen();
             Console.Write("Come soon, Enter any key to go back...");
             Console.ReadKey();
 

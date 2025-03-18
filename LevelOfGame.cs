@@ -10,7 +10,7 @@ namespace MathGame
 
         static public int from    = 0;
         static public int to      = 0;
-        static public char option ='\0';
+        static public char _operation ='\0';
 
     }
 

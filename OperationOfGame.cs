@@ -35,6 +35,43 @@ namespace MathGame
 
         }
 
+        static private void SetOperationOfGame(char _operation)
+        {
+
+            GameOption._operation = _operation;
+
+        }
+
+        static private void PerfromOption()
+        {
+
+            switch (chooise)
+            {
+
+                case 1:
+                    SetOperationOfGame('+');
+                    break;
+
+                case 2:
+                    SetOperationOfGame('-');
+                    break;
+
+                case 3:
+                    SetOperationOfGame('*');
+                    break;
+
+                case 4:
+                    SetOperationOfGame('/');
+                    break;
+
+                case 5:
+                    SetOperationOfGame('H');
+                    break;
+
+            }
+
+        }
+
 
         static public void OperationMenuScreen()
         {
@@ -43,7 +80,7 @@ namespace MathGame
 
             HeaderSreen();
             MenuScreen();
-            
+            PerfromOption();
 
         }
 
