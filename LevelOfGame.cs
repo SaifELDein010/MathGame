@@ -32,10 +32,10 @@ namespace MathGame
 
             Console.WriteLine("\t\t\t\t\t      _-_-_-_-_-_-_-_-_-_-_-_\n");
 
-            Console.WriteLine("\t\t\t\t\t      [1] Easy");
-            Console.WriteLine("\t\t\t\t\t      [2] Mid");
-            Console.WriteLine("\t\t\t\t\t      [3] Hard");
-            Console.WriteLine("\t\t\t\t\t      [4] Hybird");
+            Console.WriteLine("\t\t\t\t\t            [1] Easy");
+            Console.WriteLine("\t\t\t\t\t            [2] Mid");
+            Console.WriteLine("\t\t\t\t\t            [3] Hard");
+            Console.WriteLine("\t\t\t\t\t            [4] Hybird");
 
             Console.WriteLine("\n\t\t\t\t\t      -_-_-_-_-_-_-_-_-_-_-_-");
 
@@ -87,6 +87,7 @@ namespace MathGame
             HeaderSreen();
             MenuScreen();
             PerfromOption();
+            OperationOfGame.OperationMenuScreen();
 
         }
 
