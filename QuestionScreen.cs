@@ -3,6 +3,18 @@ namespace MathGame
 {
     class QuestionScreen
     {
+        struct GameQuestion
+        {
+
+            public int Number1;
+            public int Number2;
+            public int correctAnswer;
+            public int userAnswer;
+            public char _operator;
+
+        }
+
+        static private GameQuestion gameQuestion;
 
         static private void HeaderSreen()
         {
