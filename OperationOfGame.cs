@@ -30,7 +30,7 @@ namespace MathGame
 
             Console.WriteLine("\n\t\t\t\t\t    -_-_-_-_-_-_-_-_-_-_-_-_-_-");
 
-            chooise = Read_Int_Input.ReadNumberBetweenRange(1, 5, "\n\t\t\t\t\t       Chooise Level [1:5]: ",
+            chooise = Read_Int_Input.ReadNumberBetweenRange(1, 5, "\n\t\t\t\t\t     Chooise operation [1:5]: ",
                 "\n\t\t\t\t       Out of range, Enter a vaild number [1:5]: ");
 
         }
