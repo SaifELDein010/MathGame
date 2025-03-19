@@ -1,4 +1,6 @@
 ﻿
+using Generic_Libraries;
+
 namespace MathGame
 {
     class QuestionScreen
@@ -10,6 +12,7 @@ namespace MathGame
             public int Number2;
             public int correctAnswer;
             public int userAnswer;
+            public int questionNumber;
             public char _operator;
 
         }
@@ -23,20 +26,44 @@ namespace MathGame
 
         }
 
+        static private void ReadAnswer()
+        {
+
+            gameQuestion.userAnswer = Read_Int_Input.ReadNumber("\t\t\t\t\tYour aanswer: ", "Not A number, Enter a vaild number: ");
+
+        }
+
+        static private void IsrigthAnswer()
+        {
+
+            gameQuestion.correctAnswer = 0;
+
+            if(gameQuestion.correctAnswer == gameQuestion.userAnswer)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine($"Wronge {gameQuestion.correctAnswer}");
+            }
+
+
+        }
+
         static private void QuestionDesign()
         {
 
             Console.WriteLine("\t\t\t\t\t    _-_-_-_-_-_-_-_-_-_-_-_-_-_\n");
 
-            //Console.WriteLine($"\t\t\t\t\t Question [2]:");
+            Console.WriteLine($"\t\t\t\t\t Question [{gameQuestion.questionNumber}]:");
 
-            //Console.WriteLine($"\t\t\t\t\t Number 1");
-            //Console.Write($"\t\t\t\t\t Number 2");
-            //Console.WriteLine($"\t\t\t\t\t Operation");
-            //Console.WriteLine("\t\t\t\t\t ----------------");
+            Console.WriteLine($"\t\t\t\t\t {gameQuestion.Number1}");
+            Console.Write($"\t\t\t\t\t {gameQuestion.Number2}");
+            Console.WriteLine($"\t\t\t\t\t {gameQuestion._operator}");
+            Console.WriteLine("\t\t\t\t\t ----------------");
 
-            //Get answer from user
-            //Send response correct or wronge with rigth answer
+            ReadAnswer();
+            IsrigthAnswer();
 
             Console.WriteLine("\n\t\t\t\t\t    -_-_-_-_-_-_-_-_-_-_-_-_-_-");
 
