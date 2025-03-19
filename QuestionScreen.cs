@@ -26,15 +26,15 @@ namespace MathGame
         static private void ReadAnswer()
         {
 
-            gameQuestion.userAnswer = Read_Int_Input.ReadNumber("\t\t\t\t\tYour aanswer: ", "Not A number, Enter a vaild number: ");
+            gameQuestion.userAnswer = Read_Int_Input.ReadNumber("\t\t\t\t\t\t   Your aanswer: ", "\t\t\t\t\t\t   Not A number, Enter a vaild number: ");
 
         }
 
         static private void ReadNumberInQuestion()
         {
 
-            gameQuestion.Number1 = 0;
-            gameQuestion.Number2 = 0;
+            gameQuestion.Number1 = 5;
+            gameQuestion.Number2 = 15;
 
         }
 
@@ -48,16 +48,16 @@ namespace MathGame
         static private void IsrigthAnswer()
         {
 
-            gameQuestion.correctAnswer = 0;
+            gameQuestion.correctAnswer = 15;
 
             if(gameQuestion.correctAnswer == gameQuestion.userAnswer)
             {
-                Console.WriteLine("Correct!");
+                Console.WriteLine("\n\t\t\t\t\t\t    Correct!");
                 gameQuestion.numberOfCorrectAnswer++;
             }
             else
             {
-                Console.WriteLine($"Wronge {gameQuestion.correctAnswer}");
+                Console.WriteLine($"\n\t\t\t\t\t    Wronge, Rigth Answer is: {gameQuestion.correctAnswer}");
                 gameQuestion.numberOfWrongeAnswer++;
             }
 
@@ -75,19 +75,19 @@ namespace MathGame
         static private void QuestionDesign()
         {
 
-            Console.WriteLine("\t\t\t\t\t    _-_-_-_-_-_-_-_-_-_-_-_-_-_\n");
+            Console.WriteLine("\t\t\t\t\t  _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n");
 
-            Console.WriteLine($"\t\t\t\t\t Question [{gameQuestion.questionNumber}]:");
+            Console.WriteLine($"\t\t\t\t\t    Question [{gameQuestion.questionNumber}]:\n");
 
-            Console.WriteLine($"\t\t\t\t\t {gameQuestion.Number1}");
-            Console.Write($"\t\t\t\t\t {gameQuestion.Number2}");
-            Console.WriteLine($"\t\t\t\t\t {gameQuestion._operator}");
-            Console.WriteLine("\t\t\t\t\t ----------------");
+            Console.WriteLine($"\t\t\t\t\t\t    {gameQuestion.Number1}");
+            Console.Write($"\t\t\t\t\t\t    {gameQuestion.Number2}");
+            Console.WriteLine($"       {gameQuestion._operator}");
+            Console.WriteLine("\t\t\t\t\t           _____________\n");
 
             ReadAnswer();
             IsrigthAnswer();
 
-            Console.WriteLine("\n\t\t\t\t\t    -_-_-_-_-_-_-_-_-_-_-_-_-_-");
+            Console.WriteLine("\n\t\t\t\t\t  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
 
         }
 
@@ -99,12 +99,18 @@ namespace MathGame
             for (int i = 0; i < 5; i++)
             {
 
+                HeaderSreen();
+
                 gameQuestion.questionNumber++;
 
                 ReadNumberInQuestion();
                 ReadOperatoreInQuestion();
 
                 QuestionDesign();
+
+                Console.Write("\t\t\t\t\tPress any key to go next question...");
+                Console.ReadKey();
+                Console.Clear();
 
             }
 
@@ -116,7 +122,6 @@ namespace MathGame
 
             Console.Clear();
 
-            HeaderSreen();
             PrintQuestions();
 
         }
