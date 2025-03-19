@@ -14,7 +14,7 @@ namespace MathGame
             
             }
 
-            Console.ReadKey();
+            Console.WriteLine("\n\n\t\t\t\t     < - - Don`t make game miss you, Please - - >");
             
         }
     }
