@@ -15,21 +15,33 @@ namespace MathGame
             public int questionNumber;
             public char _operator;
 
+            public short numberOfCorrectAnswer;
+            public short numberOfWrongeAnswer;
+
         }
 
         static private GameQuestion gameQuestion;
 
-        static private void HeaderSreen()
-        {
-
-            Console.Write("\n\t\t\t\t\tM a t h  -  game  -  Q u e s t i o n\n\n");
-
-        }
-
+      
         static private void ReadAnswer()
         {
 
             gameQuestion.userAnswer = Read_Int_Input.ReadNumber("\t\t\t\t\tYour aanswer: ", "Not A number, Enter a vaild number: ");
+
+        }
+
+        static private void ReadNumberInQuestion()
+        {
+
+            gameQuestion.Number1 = 0;
+            gameQuestion.Number2 = 0;
+
+        }
+
+        static private void ReadOperatoreInQuestion()
+        {
+
+            gameQuestion._operator = '+';
 
         }
 
@@ -41,12 +53,22 @@ namespace MathGame
             if(gameQuestion.correctAnswer == gameQuestion.userAnswer)
             {
                 Console.WriteLine("Correct!");
+                gameQuestion.numberOfCorrectAnswer++;
             }
             else
             {
                 Console.WriteLine($"Wronge {gameQuestion.correctAnswer}");
+                gameQuestion.numberOfWrongeAnswer++;
             }
 
+
+        }
+
+
+        static private void HeaderSreen()
+        {
+
+            Console.Write("\n\t\t\t\t\tM a t h  -  game  -  Q u e s t i o n\n\n");
 
         }
 
@@ -69,7 +91,35 @@ namespace MathGame
 
         }
 
+        static private void PrintQuestions()
+        {
 
+            gameQuestion.questionNumber = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+
+                gameQuestion.questionNumber++;
+
+                ReadNumberInQuestion();
+                ReadOperatoreInQuestion();
+
+                QuestionDesign();
+
+            }
+
+        }
+
+        
+        static public void QuestionsScreen()
+        {
+
+            Console.Clear();
+
+            HeaderSreen();
+            PrintQuestions();
+
+        }
 
     }
 
