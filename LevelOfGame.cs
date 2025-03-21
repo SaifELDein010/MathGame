@@ -4,17 +4,6 @@ using Generic_Libraries;
 
 namespace MathGame
 {
-
-    class GameOption
-    {
-
-        static public int from    = 0;
-        static public int to      = 0;
-        static public char _operation ='\0';
-
-    }
-
-
     class LevelOfGame
     {
 
