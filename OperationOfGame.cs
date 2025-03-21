@@ -35,13 +35,6 @@ namespace MathGame
 
         }
 
-        static private void SetOperationOfGame(char _operation)
-        {
-
-            GameOption._operation = _operation;
-
-        }
-
         static private void PerfromOption()
         {
 
@@ -49,23 +42,23 @@ namespace MathGame
             {
 
                 case 1:
-                    SetOperationOfGame('+');
+                    GameQuestion.SetOperationOfGame('+');
                     break;
 
                 case 2:
-                    SetOperationOfGame('-');
+                    GameQuestion.SetOperationOfGame('-');
                     break;
 
                 case 3:
-                    SetOperationOfGame('*');
+                    GameQuestion.SetOperationOfGame('*');
                     break;
 
                 case 4:
-                    SetOperationOfGame('/');
+                    GameQuestion.SetOperationOfGame('/');
                     break;
 
                 case 5:
-                    SetOperationOfGame('H');
+                    GameQuestion.SetOperationOfGame('H');
                     break;
 
             }
@@ -81,6 +74,8 @@ namespace MathGame
             HeaderSreen();
             MenuScreen();
             PerfromOption();
+
+            QuestionScreen.QuestionsScreen();
 
         }
 
