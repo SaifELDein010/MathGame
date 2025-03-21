@@ -44,14 +44,6 @@ namespace MathGame
 
         }
 
-        static private void SetRangeOfNumber(int from, int to)
-        {
-
-            GameOption.from = from;
-            GameOption.to = to;
-
-        }
-
         static private void PerfromOption()
         {
 
@@ -59,19 +51,19 @@ namespace MathGame
             {
 
                 case 1:
-                    SetRangeOfNumber(0, 100);
+                    GameQuestion.SetRangeOfNumber(0, 100);
                     break;
 
                 case 2:
-                    SetRangeOfNumber(100, 150);
+                    GameQuestion.SetRangeOfNumber(100, 150);
                     break;
 
                 case 3:
-                    SetRangeOfNumber(150, 200);
+                    GameQuestion.SetRangeOfNumber(150, 200);
                     break;
 
                 case 4:
-                    SetRangeOfNumber(0, 200);
+                    GameQuestion.SetRangeOfNumber(0, 200);
                     break;
 
             }
