@@ -1,0 +1,13 @@
+﻿
+
+namespace MathGame
+{
+    class GameQuestion
+    {
+
+
+
+
+    }
+
+}
