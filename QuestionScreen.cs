@@ -41,7 +41,7 @@ namespace MathGame
         static private void ReadOperatoreInQuestion()
         {
 
-            gameQuestion._operator = '+';
+            gameQuestion._operator = GameQuestion.GetOperation();
 
         }
 
