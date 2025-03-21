@@ -2,6 +2,8 @@
 
 
 
+using System.Reflection.Metadata.Ecma335;
+
 namespace MathGame
 {
     class GameQuestion
@@ -11,6 +13,9 @@ namespace MathGame
         static private int to = 0;
 
         static private char _Operation = '\0';
+
+        static private int numberOfCorrectAnswer = 0;
+        static private int numberOfWrongeAnswer = 0;
 
 
         static public void SetRangeOfNumber(int _from, int _to)
@@ -32,10 +37,99 @@ namespace MathGame
         {
 
             Random rnd = new Random();
-            return rnd.Next(_from, _to);
+            return rnd.Next(_from, (_to+1));
 
         }
 
+        static public int GenerateRandomIntNumber()
+        {
+
+            Random rnd = new Random();
+            return rnd.Next(from, (to+1));
+
+        }
+
+
+        static public char GetOperation()
+        {
+
+            char op = _Operation;
+
+            if (_Operation == 'H')
+            {
+                op = GetRandomOperation();
+            }
+                
+            return op;
+        }
+
+        static public string GetLevel()
+        {
+
+            if(from == 0 && to == 100)
+            {
+                return "Easy";
+            }
+            else if(from == 100)
+            {
+                return "Mid";
+            } 
+            else if(from == 150)
+            {
+                return "Hard";
+            }
+            else
+            {
+                return "Hybird";
+            }
+
+        }
+
+
+        static private char GetRandomOperation()
+        {
+
+            int number = GenerateRandomIntNumber(1,4);
+
+            switch(number)
+            {
+
+                case 1:
+                    return '+';
+
+                case 2:
+                    return '-';
+
+                case 3:
+                    return '*';
+
+                case 4:
+                    return '/';
+
+            }
+
+            return '+';
+
+        }
+
+        static public bool IsrigthAnswer(int userAnswer)
+        {
+
+            int correctAnswer = 15;
+
+            if (correctAnswer == userAnswer)
+            { 
+                numberOfCorrectAnswer++;
+                return true;
+            }
+            else
+            {
+                numberOfWrongeAnswer++;
+                return false;
+            }
+
+
+        }
 
     }
 
