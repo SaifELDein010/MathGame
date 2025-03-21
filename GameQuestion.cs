@@ -21,10 +21,18 @@ namespace MathGame
 
         }
 
-        static private void SetOperationOfGame(char operation)
+        static public void SetOperationOfGame(char operation)
         {
 
             _Operation = operation;
+
+        }
+
+        static private int GenerateRandomIntNumber(int _from, int _to)
+        {
+
+            Random rnd = new Random();
+            return rnd.Next(_from, _to);
 
         }
 
