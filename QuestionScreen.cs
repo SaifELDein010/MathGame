@@ -45,20 +45,16 @@ namespace MathGame
 
         }
 
-        static private void IsrigthAnswer()
+        static private void IsrigthUserAnswer()
         {
 
-            gameQuestion.correctAnswer = 15;
-
-            if(gameQuestion.correctAnswer == gameQuestion.userAnswer)
+            if(GameQuestion.IsrigthAnswer(gameQuestion.userAnswer, gameQuestion.Number1, gameQuestion.Number2))
             {
                 Console.WriteLine("\n\t\t\t\t\t\t    Correct!");
-                gameQuestion.numberOfCorrectAnswer++;
             }
             else
             {
-                Console.WriteLine($"\n\t\t\t\t\t    Wronge, Rigth Answer is: {gameQuestion.correctAnswer}");
-                gameQuestion.numberOfWrongeAnswer++;
+                Console.WriteLine($"\n\t\t\t\t\t    Wronge, Rigth Answer is: {GameQuestion.correctAnswer}");
             }
 
 
@@ -85,7 +81,7 @@ namespace MathGame
             Console.WriteLine("\t\t\t\t\t           _____________\n");
 
             ReadAnswer();
-            IsrigthAnswer();
+            IsrigthUserAnswer();
 
             Console.WriteLine("\n\t\t\t\t\t  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
 

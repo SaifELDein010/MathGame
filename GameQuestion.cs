@@ -13,9 +13,11 @@ namespace MathGame
         static private int to = 0;
 
         static private char _Operation = '\0';
+        static private char op ='\0';
 
         static private int numberOfCorrectAnswer = 0;
         static private int numberOfWrongeAnswer = 0;
+        static public int correctAnswer = 0;
 
 
         static public void SetRangeOfNumber(int _from, int _to)
@@ -53,7 +55,7 @@ namespace MathGame
         static public char GetOperation()
         {
 
-            char op = _Operation;
+            op = _Operation;
 
             if (_Operation == 'H')
             {
@@ -112,10 +114,37 @@ namespace MathGame
 
         }
 
-        static public bool IsrigthAnswer(int userAnswer)
+
+        static private int GetAnswer(int number1, int number2)
         {
 
-            int correctAnswer = 15;
+            switch(op)
+            {
+
+                case '+':
+                    return number1 + number2;
+
+                case '-':
+                    return number1 - number2;
+
+                case '*':
+                    return number1 * number2;
+
+                case '/':
+                    return number1 * number2;
+
+
+            }
+
+            return 0;
+
+        }
+
+
+        static public bool IsrigthAnswer(int userAnswer, int number1, int number2)
+        {
+
+            correctAnswer = GetAnswer(number1, number2);
 
             if (correctAnswer == userAnswer)
             { 
