@@ -5,7 +5,7 @@ namespace MathGame
 {
     class QuestionScreen
     {
-        struct GameQuestion
+        struct GameQuestionVariables
         {
 
             public int Number1;
@@ -20,7 +20,7 @@ namespace MathGame
 
         }
 
-        static private GameQuestion gameQuestion;
+        static private GameQuestionVariables gameQuestion;
 
       
         static private void ReadAnswer()
@@ -33,8 +33,8 @@ namespace MathGame
         static private void ReadNumberInQuestion()
         {
 
-            gameQuestion.Number1 = 5;
-            gameQuestion.Number2 = 15;
+            gameQuestion.Number1 = GameQuestion.GenerateRandomIntNumber();
+            gameQuestion.Number2 = GameQuestion.GenerateRandomIntNumber();
 
         }
 
